@@ -3,7 +3,7 @@ layout: post
 title:  "Meeting Report-Jan_1"
 date:   2020-01-07 09:00:09 -0200
 description: 
-permalink: /Meeting Report 1/
+permalink: /welcome-to-jekyll/
 ---
 
 
