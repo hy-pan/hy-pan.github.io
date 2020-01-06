@@ -1,81 +1,43 @@
-Materialize - jekyll
-==============
+# Blade Theme
 
+A simple Jekyll blog theme 
 
-## Introducton
+![Screenshot of theme](https://github.com/mateussmedeiros/blade-theme/blob/master/screenshot.png?raw=true)
 
-This jekyll theme is based on [materialize](http://materializecss.com).
-(NOTE: this theme is only made for my own, but you can modify it freely.)
+:exclamation: **This theme requires *ruby* and *rubygems* installed!**
 
-[Open demo](https://mumuxme.github.io/materialize-jekyll/)
+* :heavy_check_mark: Resposive layout
+* :heavy_check_mark: Preprocessor SASS
+* :heavy_check_mark: Syntax highlight
+* :heavy_check_mark: Author config
+* :heavy_check_mark: Pagination
+* :heavy_check_mark: Search bar
+* :heavy_check_mark: Comments with Disqus
+* :heavy_check_mark: Share posts
+* :heavy_check_mark: Sitemap and seo tags
 
+-----
 
-## Getting start
+### Get Started in 4 easy steps
 
-#### Install
+1. Download or clone repositorie `git clone https://github.com/mateussmedeiros/blade-theme.git`
+2. Enter the folder: `cd blade-theme`
+3. Install Ruby gems: `bundle install`
+4. Start Jekyll server: `jekyll serve`
 
-You may need some dev headers, for debian/linux, just run:
+Access: [localhost:4000](http://localhost:4000)
 
-```
-# apt-get install liblzma-dev zlib1g-dev
-```
+-----
 
-(Other dependencies may also needed.)
+### Demo and Download
 
-```
-$ git clone https://github.com/mumuxme/materialize-jekyll
-$ cd materialize-jekyll
-$ bundle install
-```
+[Demo](http://mateussmedeiros.github.io/blade-theme/) :arrow_upper_right: |
+[Download](https://github.com/mateussmedeiros/blade-theme/archive/master.zip) :arrow_upper_right:
 
-#### Run
+The theme is also available in [RubyGems](https://rubygems.org/gems/blade-theme) :arrow_upper_right:
 
-1. Modify `_config.yml`, `about.md` and other(whatever you need).
-2. You can add a `favicon.ico` file in the project root directory.
-3. If you want to use google analytics, add your `google-analytics.js` into `js` directory.
+-----
 
-Then:
+### License
 
-```
-$ bundle exec jekyll s
-
-# or start with draft
-$ bundle exec jekyll s --drafts
-```
-
-## Or start with docker
-
-```
-cd materialize-jekyll
-
-# export GEM_MIRROR=mirror.https://rubygems.org
-export GEM_MIRROR='Your-ruby-gem-mirror'
-
-make build
-make run
-```
-
-
-## Other
-
-#### Emoji
-
-You can use GitHub-flavored emoji. See [emoji cheat sheet](http://www.webpagefx.com/tools/emoji-cheat-sheet/)
-
-#### TODO
-
-- Add comment. (???)
-- Add options to choose self host or cdn.
-
-
-## License
-
-[GNU GPL v3](http://www.gnu.org/licenses/).
-
-Others:
-
-- jquery: <https://jquery.com>
-- materialize: <http://materializecss.com>
-- material-scrolltop: [bartholomej/material-scrolltop](https://github.com/bartholomej/material-scrolltop)
-- material design icon: [Templarian/MaterialDesign](https://github.com/Templarian/MaterialDesign) or <https://materialdesignicons.com/getting-started>
-- GitHub-flavored emoji plugin: [jemoji](https://github.com/jekyll/jemoji)
+It is under [the MIT license](/LICENSE).
