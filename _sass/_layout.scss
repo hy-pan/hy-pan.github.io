@@ -1,268 +1,325 @@
-/*-----------------------
----- Header | Footer ----
------------------------*/
-.header {
-  background: $blue;
-    a {
-        text-decoration: none;
-    }
+/**
+ * Layout
+ */
+
+::selection {
+    color: #fff;
+    background-color: $teal-accent;
+}
+::-moz-selection {
+    color: #fff;
+    background-color: $teal-accent;
 }
 
-.footer {
-  background: $black;
-    color: $white;
-
-    p, a {
-      margin: 0;
-      font-size: 11pt;
-    }
-
-}
-
-.header, .footer {
-    padding: 15px;
-    text-align: center;
-}
-
-/*------------------
----- Site Title ----
-------------------*/
-.title {
-  clear: both;
-  padding: 20px 0;
-
-    h1 {
-      margin-bottom: 10px;
-    }
-
-    h1 a {
-        font-family: $title-font;
-        font-size: 32pt;
-    }
-
-    h2 a {
-        font-size: 24pt;
-        font-weight: 300;
-    }
-
-    h1 a, h2 a {
-      color: $white;
-    }
-}
-
-/*------------
----- Menu ----
-------------*/
-.bt-menu {
-    display: none;
-    float: left;
-}
-
-.menu {
-    a {
-        float: left;
-        margin: 0 10px;
-        font-size: 16pt;
-        color: $white;
-
-        &:last-child {
-            margin-right: none;
-        }
-
-        &:hover {
-            color: $black;
-        }
-    }
-}
-
-/*--------------
----- Search ----
---------------*/
-.bt-search {
-    float: right;
-}
-
-#search-container {
-    display: none;
-    top: 0;
-    left: 0;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
-
-    input[type=text]{
-        width: 400px;
-        height: 30px;
-        margin: 10px auto;
-        background: transparent;
-        border: 0;
-        border-bottom: 1px solid $white;
-        outline: 0;
-        text-align: center;
-        font-size: 16pt;
-        color: $white;
-    }
-
-    ::-webkit-input-placeholder{
-        color: $white;
-    }
-
-    :-ms-input-placeholder {
-        color: $white;
-    }
-
-    ::-ms-input-placeholder {
-        color: $white;
-    }
-
-    ::-moz-placeholder {
-        color: $white;
-    }
-
-    a, p {
-        display: block;
-        margin: 10px;
-        color: $white;
-    }
-
-    a:hover {
-        color: $blue;
-        text-decoration: underline;
-    }
-}  
-
-/*--------------------
----- Social Icons ----
---------------------*/
-.icon-top {
-    width: 25px;
-    height: 25px;
-    fill: $white;
-    cursor: pointer;
-}
-
-.icon {
-  width: 40px;
-  height: 40px;
-  margin: 5px;
-  display: inline-block;
-  fill: $blue;
-
-  &:hover {
-    fill: $white;
-  }
-}
-
-/*-----------------
----- Home Page ----
------------------*/
-.welcome-title {
-    font-size: 16pt;
-    line-height: 20pt;
+/* Check */
+.notice-warning {
+    background-color: #E91E63;
+    color: #fff;
+    font-size: 120%;
     font-weight: bold;
-    margin-bottom: 5px;
-    margin-top: 0;
-} 
-
-/*-------------------
----- Page | Post ----
--------------------*/
-.page-content {
-    display: block;
-    margin: 0 auto;
-    padding: 35px 30px;
-    max-width: 1000px;
+    left: 0;
+    padding: 7px 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
-.post-content {
-    h2, h3, h4, h5, h6 {
-        margin: 20px 0;
+/* Helper */
+.lower-case { text-transform: lowercase; }
+.upper-case { text-transform: uppercase; }
+.capitalize { text-transform: capitalize; }
+
+
+/**
+ * Container and width
+ */
+
+@media only screen and (max-width : 992px) {
+    header, .home, .post-container, .page-container, footer {
+        padding-left: 0;
     }
+}
+
+@media only screen and (min-width: 993px) {
+    .home { width: 68%; }
+    .post-container { width: 72%; }
+    .page-container { width: 72%; }
+}
+
+.post-container,
+.page-container {
+    @media #{$small-and-down} {
+        width: 100%;
+    }
+}
+
+
+/**
+ * Site header
+ */
+.site-title {
+    font-family: $site-title-font;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    font-size: 18px;
+    margin-left: 10px;
+    @media #{$medium-and-up} {
+        font-size: 24px;
+        margin-left: 20px;
+    }
+}
+
+// FIXME: offsetting html anchor to adjust for fixed header
+/*
+a.footnote,
+a.reversefootnote {
+    padding-top: 80px;
+    margin-top: -80px;
+}
+*/
+
+/*
+.brand-logo {
+    padding: 0 10px !important;
+}
+
+// replace(broken) materialize css default style
+//.site-header {
+    .side-nav li { padding: 0 0; }
+    .side-nav a { padding: 0 26px; }
+//}
+*/
+
+/* May bug, see:
+ * https://github.com/Dogfalo/materialize/issues/2879
+ */
+#sidenav-overlay {
+    z-index: 996;
+}
+
+
+/**
+ * Site post list
+ */
+.page-heading {
+    margin-top: $spacing-unit;
+}
+
+.favo {
+    letter-spacing: .2em;
 }
 
 .post-list {
+    margin-left: 0;
+    margin-top: 32px;
     list-style: none;
-    padding: 0;
-}
 
-.post-date {
-    font-size: 12pt;
-    font-weight: 300;
-}
-
-.post-container {
-  padding: 15px 0;
-    border-bottom: 1px solid $black;
-
-    span {
-      font-weight: 300;
+    > li {
+        margin-bottom: $spacing-unit;
     }
 }
 
-.page-title {
-  border-bottom: 1px solid $black;
-  padding: 5px 0;
-  font-size: 22pt;
-}
+.post-link {
+    font-family: $list-link-font;
+    display: block;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 
-/*---------------------------
----- Paginations Buttons ----
----------------------------*/
-.pagination {
-  a, span {  
-    padding: 0 6px;
-  }
-} 
+    color: $pink;
 
-/*--------------
----- Author ----
---------------*/
-.img-author {
-  width: 150px;
-  height: 150px;
-  float: left;
-  margin-right: 20px;
-  border-radius: 100%;
-  border: 3px solid $blue;
-}
-
-.author {
-  background: $grey;
-  padding: 15px;
-  @extend %margins;
-
-  .details {
-    @extend %margins;
-  }
-
-  .name a {
-    font-size: 18pt;
-    text-decoration: none;
-  }
-}
-
-/*--------------------------------
----- Share Buttons | Comments ----
---------------------------------*/
-.share, .comments {
-  text-align: center;
-  border-top: 1px solid $black;
-  padding: 10px;
-}
-
-.share {
-  a {
-    text-decoration: none;
-  }
-
-  .icon {
-    margin-top: 10px;
-    
     &:hover {
-      fill: darken($blue, 15%);
+        color: $blue;
     }
-  }
+
+    @media #{$small-and-down} {
+        font-size: 1.3em;
+    }
+}
+
+
+/**
+ * Site pagination
+ */
+.pagination {
+    margin-top: 32px;
+    margin-bottom: 40px;
+
+    .page {
+        /* center the item (waitting other elegant method) */
+        left: 50%;
+        margin-left: -9.89rem;
+    }
+}
+
+
+/**
+ * Site footer
+ */
+.page-footer {
+    ul {
+        margin-left: 0;
+    }
+    li {
+        margin-top: 10px;
+    }
+}
+
+
+/**
+ */
+.tab-section {
+    @media #{$small-and-down} {
+        //padding: 70px 0px;
+    }
+    @media #{$medium-and-up} {
+        padding: 10px 56px;
+        margin-bottom: 60px;
+    }
+}
+
+
+/**
+ * Category
+ */
+
+.post-category {
+    ul li {
+        margin-top: 8px;
+        list-style-type: none !important;
+    }
+
+    .collapsible-body {
+        padding: 1rem;
+    }
+
+    @media #{$medium-and-up} {
+        .category-link {
+            /*
+            transition: padding-left 0.25s;
+            -webkit-transition: padding-left 0.25s;
+            -moz-transition: padding-left 0.25s;
+            -o-transition: padding-left 0.25s;
+
+            &:hover {
+                padding-left: 12px;
+            }
+            */
+        }
+    }
+
+    @media #{$small-and-down} {
+        .collapsible-body ul { margin-left: 10px; margin-right: 10px; }
+    }
+}
+
+
+/**
+ * Post
+ */
+
+.post-ribbon {
+    //background-color: rgba(15, 99, 17, 0.51);
+    background-color: rgba(68, 68, 68, 0.41);
+    flex-shrink: 0;
+    height: 40vh;
+    width: 100%;
+}
+
+.post-page {
+    margin-top: -35vh;
+    flex-shrink: 0;
+    min-height: 800px;
+
+    @media #{$medium-and-up} {
+        margin-bottom: 40px;
+    }
+
+    @media #{$small-and-down} {
+        // remove z-depth-2 for mobile
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+    }
+}
+
+.post-section {
+    @media #{$small-and-down} {
+        //padding: 70px 0px;
+    }
+    @media #{$medium-and-up} {
+        padding: 70px 56px;
+        margin-bottom: 60px;
+    }
+}
+
+.post-header {
+    margin-top: $spacing-unit*1.5;
+    margin-bottom: $spacing-unit*1.6;
+
+    .post-tag {
+        font-size: 1.5rem;
+        color: lighten($pink, 10%);
+    }
+}
+
+/* post title (head 1) */
+.post-title {
+    font-family: $post-title-font;
+    color: rgba(0, 0, 0, 0.76);
+    font-size: 2rem;
+    margin: 2.1rem 0 1.68rem;
+
+    @media #{$medium-and-down} {
+        font-size: 2rem;
+    }
+}
+
+/* post and page content */
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-family: $head-font;
+        font-size: 1.8rem;
+        color: #ee6e73;
+        margin: 2.78rem 0 1.224rem;
+
+        @media #{$medium-and-down} {
+            font-size: 1.8rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin: 2.68rem 0 1.2rem;
+    }
+
+    h4 {
+        color: #105a98;
+        font-family: $head-font;
+        font-size: 1.4rem;
+        margin: 1.68rem 0 1rem;
+
+        @media #{$medium-and-down} {
+            font-size: 1.5rem;
+        }
+    }
+
+    h5,
+    h6 {
+        font-size: 1.2rem;
+        margin: 1.68rem 0 1rem;
+    }
+
+    strong {
+        color: darken($red, 20%);
+    }
+
+    ul li { list-style-type: disc; }
+}
+
+/* post share */
+.post-share {
+    margin-top: 100px;
+    letter-spacing: .2em;
 }
